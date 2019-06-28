@@ -6,8 +6,8 @@ aws_access_key_id = os.environ['ACCESS_KEY'],
 aws_secret_access_key = os.environ['SECRET_KEY'],
 region_name='us-west-2'
 
-rk = boto3.client('rekognition')
-s3 = boto3.resource('s3')
+rk = boto3.client('rekognition', region_name=region_name, aws_access_key_id = aws_access_key_id, aws_secret_access_key = aws_secret_access_key)
+s3 = boto3.resource('s3', region_name=region_name, aws_access_key_id = aws_access_key_id, aws_secret_access_key = aws_secret_access_key)
 
 # Get a handle on the photo and read it
 bucket = "name_of_your_bucket"
